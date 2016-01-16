@@ -1,0 +1,12 @@
+<html>
+<head>
+<title>www.dsrv.local</title>
+</head>
+<body>
+<h1>Welcome to DSRV server</h1>
+<?php 
+echo "kurban";
+?>
+</body>
+</html>
+

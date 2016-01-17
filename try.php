@@ -25,7 +25,13 @@ if ($result = $con->query($query1)){
     }
 if(!empty($row[0])&& !empty($row[1])){
     $_SESSION[0] = $row[1];
-    echo"Success";
+    echo"Success\n";
+    $query = "Select * from Users,User_Information where Users.Username ='$_POST[user]' and  Users.UserID = User_Information.User_id";
+    if($result1 = $con->query($query)){
+        $row1 = $result1 -> fetch_row();
+        printf("Name: %s, Surname: %s, Address: %s, Email: %s\n", $row1[7],$row1[8],$row1[3],$row1[5]);
+    }
+    
  }else{
     echo "Wrong username or password !";
 }

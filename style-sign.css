@@ -1,0 +1,34 @@
+#body-color {
+    background-image: url(ico.jpg);
+    background-size:cover;
+    background-color: aqua;
+}
+
+fieldset{
+    margin:auto;
+    margin-top: 400px;
+    text-align: center;
+   
+    
+}
+
+#user{
+    box-shadow: 0 0 5px 1px #969696;
+
+    display: inline-block;
+    float: left;
+}
+
+#pass{
+    display: inline-block;
+    float: left;
+    box-shadow: 0 0 5px 1px #969696;
+}
+label{
+    font-family: Helvetica, san serif;
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+}

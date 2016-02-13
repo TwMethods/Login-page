@@ -1,0 +1,39 @@
+#body-color {
+    background-image: url(back.jpg);
+    background-size:cover;
+    background-color: aqua;
+}
+
+fieldset{
+    margin:auto;
+    margin-top: 300px;
+    text-align: center;
+    
+   
+    
+}
+
+label{
+    font-family: Helvetica, sans-serif;
+    display: inline-block;
+
+    text-align: right;
+}
+input{
+	box-shadow: 0 0 5px 1px #969696;
+	display: inline-block;
+
+}
+#button{
+
+
+	background-color: #2b8cbe;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: ;
+    font-family: sans-serif;
+    text-shadow : 0 0 2px black;
+    font-size: 100%;
+}
+

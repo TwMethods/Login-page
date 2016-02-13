@@ -3,21 +3,73 @@
 <head>
     <title> Registration </title>
     <link rel="stylesheet" type="text/css" href="style-reg.css">
-</head>
+
+    <script type="text/javascript">
+
+    function validatePass(){
+    	var pass, text, check,btn;
+    	document.getElementById("button").disabled = false;
+    	message = document.getElementById("passText");
+    	pass = document.getElementById("password").value;
+    	check = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    	if(pass.match(check)){
+    		document.getElementById("button").disabled = false;
+    		text = "Your password is strong enough";
+    		message.innerHTML = text;
+    		return true;
+    	}else{
+    		text = " Your password must have at least 1 digid, 1 upper case letter and 1 lowercase letter and should be at least 6 charactes long";
+    		message.innerHTML = text;
+    		document.getElementById("button").disabled = true;
+    		return false;
+    	}
+    }
+
+    function checkPass(){
+    	var pass1 = document.getElementById("password");
+    	var pass2 = document.getElementById("confPass");
+    	var message = document.getElementById("passConf");
+    	var goodColor = "#66cc66";
+    	var badColor = "#ff6666";
+    	document.getElementById("button").disabled = false;
+
+    	if(pass1.value == pass2.value ){
+    		pass2.style.backgroundColor = goodColor;
+        	message.style.color = goodColor;
+    		message.innerHTML = "Passwords match !";
+    		document.getElementById("button").disabled = false;
+
+    	}else{
+    		pass2.style.backgroundColor = badColor;
+        	message.style.color = badColor;
+        	message.innerHTML = "Passwords Do Not Match!";
+        	document.getElementById("button").disabled = true;
+    	}
+
+
+    }
+
+    </script>
+</head>		
     <body id ="body-color">
     <div id = "Register">
-    <fieldset> <legend> Registration form</legend>
+    <fieldset style = "width:35%"> <legend> Registration form</legend>
     <form method = "POST" action = "register.php">
-        Name <br><input type = "text" name = "name" size = "40"><br>
-        Surname<br><input type = "text" name = "surname" size = "40"><br>
-        Username <br><input type="text" name="user" size="40"><br>
-        Password <br><input type="password" name="pass" size="40"><br>
-        Date of Birth(dd/mm/yy) <br><input type = "text" name = "dob" size = "40"><br>
-        Email<br><input type = "text" name = "email" size = "40"><br>
-        Address<br><input type = "text" name = "address" size = "40"><br>
+        <label>Name</label> <br><input type = "text" name = "name" size = "40"><br>
+        <label>Surname</label><br><input type = "text" name = "surname" size = "40"><br>
+        <label>Username</label> <br><input type="text" name="user" size="40" ><br>
+        <label>Password</label> <br><input id = "password" type="password" name="pass" onkeyup="validatePass()" size="40"><br>
+        <span id = "passText"></span><br>
+        <label>Confirm Password</label> <br><input id = "confPass" type = "password" name = "confPass" onkeyup = "checkPass(); return false;"  size = "40"><br>
+        <span id = "passConf"></span><br>
+        <label>Date of Birth(dd/mm/yy)</label> <br><input type = "text" name = "dob" size = "40"><br>
+        <label>Email</label><br><input type = "text" name = "email" size = "40"><br>
+        <label>Address</label><br><input type = "text" name = "address" size = "40"><br>
         <input id="button" type="submit" name="submit" value="Register">
+        
         </form>
     </fieldset>
         </div>
+
         </body>
 </html>
